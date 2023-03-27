@@ -1,0 +1,51 @@
+<div class="container-fluid loginbg h-100">
+    <div class="row align-items-center justify-content-center h-100">
+        <h2 class="logo">
+            <img class="me-2" src="./assets/logo.png" width="50">
+            Banking System
+        </h2>
+        <div class="col-12 col-md-3 login-card h-100">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center mb-4">
+                        <h5 class="card-title fw-bold">Welcome Back !</h5>
+                        <span>Please login here</span>
+                    </div>
+                    <div class="col-12 d-flex align-items-center justify-content-center mb-4">
+                        <span class="user-icon">
+                            <i class="bi bi-person-circle"></i>
+                        </span>
+                    </div>
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="email" type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com" name="email">
+                                <label for="floatingInput">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="password" type="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password" name="password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <button id="login" (click)="login()" class="btn btn-primary col-12 shadow">Login</button>
+                        </div>
+                        <div class="col-12 d-flex align-items-center justify-content-center my-4">
+                            <span class="me-2">Need an account?</span>
+                            <a [routerLink]="['/register']" class="text-danger">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader" *ngIf="auth.loader">
+    <img src="./assets/loader.gif" width="100" />
+</div>

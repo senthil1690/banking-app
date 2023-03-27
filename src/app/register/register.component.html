@@ -1,0 +1,74 @@
+<div class="container-fluid loginbg h-100">
+    <div class="row align-items-center justify-content-center h-100">
+        <h2 class="logo">
+            <img class="me-2" src="./assets/logo.png" width="50">
+            Banking System
+        </h2>
+        <div class="col-12 col-md-12 h-100 px-0">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center mb-4">
+                        <h5 class="card-title fw-bold">Welcome our Banking !</h5>
+                        <span>Please Register here</span>
+                    </div>
+                    <form class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="firstname" type="text" class="form-control" id="firstName"
+                                    placeholder="First Name" name="firstName">
+                                <label for="firstName">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="lastname" type="text" class="form-control" id="lastName"
+                                    placeholder="Last Name" name="lastName">
+                                <label for="lastName">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="email" type="email" class="form-control" id="email"
+                                    placeholder="name@example.com" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="password" type="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password" name="password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="aadhar" type="text" class="form-control" id="aadhar"
+                                    placeholder="Aadhar Number" name="aadhar">
+                                <label for="aadhar">Aadhar Number</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="col-12 form-floating">
+                                <input [(ngModel)]="pan" type="text" class="form-control" id="pan"
+                                    placeholder="PAN Number" name="pan">
+                                <label for="pan">PAN Number</label>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <button (click)="register()" id="register"
+                                class="btn btn-primary col-12 shadow">Register</button>
+                        </div>
+                        <div class="col-12 d-flex align-items-center justify-content-center my-4">
+                            <span class="me-2">Already have an account?</span>
+                            <a [routerLink]="['/login']" class="text-danger">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader" *ngIf="auth.loader">
+    <img src="./assets/loader.gif" width="100" />
+</div>
