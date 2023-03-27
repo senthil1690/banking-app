@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "cordovaIntegerate": "ng build --aot --base-href . --output-path bankingSystem/www",
+    "cordovacreate": "cordova create bankingSystem com.bankingSystem.app bankingSystem"
   },
   "private": true,
   "dependencies": {
