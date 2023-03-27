@@ -152,3 +152,34 @@ html {
     align-items: center;
     justify-content: center;
 }
+
+.summary-group {
+    width: 100%;
+
+    .list-group-item {
+        width: 100%;
+        &:nth-child(3n+1){
+            .avatar-icon i {
+                color:var(--bs-primary);
+            }
+        }
+        &:nth-child(3n+2){
+            .avatar-icon i {
+                color:var(--bs-warning);
+            }
+        }
+        &:nth-child(3n+3){
+            .avatar-icon i {
+                color:var(--bs-info);
+            }
+        }
+    }
+
+    .summary-item {
+        flex: 1;
+    }
+
+    .avatar-icon i {
+        font-size: 2rem;
+    }
+}
