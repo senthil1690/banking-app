@@ -25,12 +25,19 @@
                                 <button class="btn btn-primary icon me-3 rounded">
                                     <i class="bi bi-person-lines-fill"></i>
                                 </button>
-
                                 Account Summary
                             </div>
                             <div class="collapse mt-2" id="collapseExample">
-                                <div class="card border">
-
+                                <div class="card border rounded">
+                                    <div class="card-body d-flex align-items-center rounded">
+                                        <button class="btn btn-success icon me-2">
+                                            <i class="bi bi-wallet2"></i>
+                                        </button>
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-bold h4">1000.00</span>
+                                            <span class="text-muted">Total Balance</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -44,8 +51,37 @@
                                 Transaction Details
                             </div>
                             <div class="collapse mt-2" id="collapseExample1">
-                                <div class="card border">
+                                <div class="card border rounded">
+                                    <div class="card-body d-flex align-items-center rounded">
+                                        <ul class="list-group summary-group">
+                                            <li class="list-group-item" *ngFor="let summary of summaries; let i=index;">
+                                                <div class="row align-items-center g-2 w-100">
+                                                    <div class="col-auto avatar-icon me-2">
+                                                        <i class="bi bi-person-circle"></i>
+                                                    </div>
+                                                    <div class="col-12 col-md d-flex flex-column summary-item">
+                                                        <span class="fw-bold">{{summary.name}}</span>
+                                                        <span class="text-muted small">Name</span>
+                                                    </div>
+                                                    <div class="col-12 col-md d-flex flex-column summary-item">
+                                                        <span class="fw-bold">{{summary.amount}}</span>
+                                                        <span class="text-muted small">Amount</span>
+                                                    </div>
+                                                    <div class="col-12 col-md d-flex flex-column summary-item">
+                                                        <span class="fw-bold">{{summary.date}}</span>
+                                                        <span class="text-muted small">Date</span>
+                                                    </div>
+                                                    <div class="col-12 col-md d-flex flex-column summary-item flex-grow-0">
+                                                        <span class="badge fw-normal"
+                                                            [ngClass]="{'bg-danger': summary.status=='debit', 'bg-success':summary.status=='credit'}"
+                                                            >{{summary.status}}</span>
+                                                        <span class="text-muted small">Status</span>
+                                                    </div>
+                                                </div>
 
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

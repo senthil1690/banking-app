@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
   email: any;
   firstname: any;
   lastname: any;
-
+  summaries = [{"name": "Senthil Kumar", "amount": "100.00", "date": "24/03/2023", "status": "debit"},
+{ "name": "Kumar", "amount": "1000.00", "date": "25/03/2023", "status": "credit"},
+{ "name": "Consolidate charges", "amount": "1000.00", "date": "25/03/2023", "status": "debit"}]
   constructor(public auth: UserService) { }
 
   ngOnInit(): void {
@@ -37,7 +39,7 @@ export class HomeComponent implements OnInit {
         return data;
 
       })
-      
+
     }, err => {
       alert('Error while fetching student data');
     })
